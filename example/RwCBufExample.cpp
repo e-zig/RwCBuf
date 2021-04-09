@@ -1,7 +1,7 @@
 #include <iostream>
 #include <limits>
 
-#include "..\RwCBuf.hpp"
+#include "RwCBuf.hpp"
 
 // Set size of buffer
 constexpr const size_type RwCBuf_SIZE{10};
