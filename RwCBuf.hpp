@@ -220,10 +220,10 @@ class RwCBuf {
   size_type end() noexcept { return _end(); }
 
   /**
-   * @brief The assignment operator as a replacement for the write() method
+   * @brief The input operator as a replacement for the write() method
    * @note The result of the write is not checked here. @n
    * In Rewrite mode write always succesfull
-   * @param[in] T - takes a value by constant reference
+   * @param[in] value - takes a value by constant reference
    * @return RwCBuf& - pointer to class instance
    */
   RwCBuf& operator<<(const T& value) noexcept {
@@ -231,6 +231,12 @@ class RwCBuf {
     return *this;
   }
 
+  /**
+   * @brief The output operator as a replacement for the read() method
+   * @note The result of the read is not checked here.
+   * @param[out] value - return a value by reference
+   * @return RwCBuf& - pointer to class instance
+   */
   RwCBuf& operator>>(T& value) noexcept {
     read(value);
     return *this;
