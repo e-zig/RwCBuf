@@ -11,12 +11,6 @@
 
 #include <cstddef>
 
-enum class rwType : bool  ///< Buffer operation mode
-{
-  nonRwBuf = false,  ///< Non-Rewrite mode
-  rwBuf = true       ///< Rewrite mode
-};
-
 using size_type = size_t;  ///< Array index type
 
 /**
@@ -81,6 +75,13 @@ class RwCBuf {
   static_assert(SIZE > 1, "RwCBuf::SIZE must be at least 2");
 
   using value_type = T;
+
+ public:
+  enum class rwType : bool  ///< Buffer operation mode
+  {
+    nonRwBuf = false,  ///< Non-Rewrite mode
+    rwBuf = true       ///< Rewrite mode
+  };
 
  private:
   T _data[SIZE]{};  ///< Buffer Array
@@ -225,8 +226,13 @@ class RwCBuf {
    * @param[in] T - takes a value by constant reference
    * @return RwCBuf& - pointer to class instance
    */
-  RwCBuf& operator=(const T& value) noexcept {
+  RwCBuf& operator<<(const T& value) noexcept {
     write(value);
+    return *this;
+  }
+
+  RwCBuf& operator>>(T& value) noexcept {
+    read(value);
     return *this;
   }
 

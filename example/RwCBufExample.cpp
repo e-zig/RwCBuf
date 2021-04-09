@@ -43,11 +43,11 @@ int main() {
 
     // Reset and set mode
     if ((cin >> in).good()) {
-      if (in > 0) pbuf->reset(rwType::rwBuf);
-      if (in == 0) pbuf->reset(rwType::nonRwBuf);
+      if (in > 0) pbuf->reset(RwCBufType::rwType::rwBuf);
+      if (in == 0) pbuf->reset(RwCBufType::rwType::nonRwBuf);
       if (in < 0) break;
     } else
-      pbuf->reset(rwType::rwBuf);
+      pbuf->reset(RwCBufType::rwType::rwBuf);
 
     cout << "Buffer reset in ";
     if (bool(pbuf->reWriteMode()))
@@ -59,10 +59,10 @@ int main() {
 
     clearCin();
 
-    // Read console and write items by operator =
+    // Read console and write items by operator <<
     do {
       if ((cin >> c).good())
-        *pbuf = c;
+        *pbuf << c;
       else
         break;
       if ((cin.peek() != '\n') && (cin.peek() != ' ')) cin.get();
@@ -86,19 +86,15 @@ int main() {
       cout << endl;
     }
 
-    // Extract items by read()
+    // Extract items by operator >>
     while (!pbuf->isEmpty()) {
       cout << endl << "Number of items to read: ";
       if ((cin >> in).good()) {
         if (in > 0)
           for (auto k = 0; k < in; ++k) {
             if (pbuf->isEmpty()) break;
-            if (pbuf->read(c))
-              cout << c << " ";
-            else {
-              cout << endl << "Buffer read error!" << endl;
-              break;
-            }
+            *pbuf >> c;
+            cout << c << " ";
           }
       } else
         clearCin();
