@@ -9,74 +9,25 @@
 
 #pragma once
 
-#include <cstddef>
-
-using size_type = size_t;  ///< Array index type
-
-/**
- * @brief Ring Buffer Index Template Class
- * @note Implemented as a wrapper over size_type @n
- * Default constructor. Other constructors and @n
- * assignment operators are prohibited.
- * @param[in] SIZE - buffer size (size_type)
- */
-
-template <size_type SIZE>
-class RwCBufIndex {
- public:
-  RwCBufIndex() = default;
-  RwCBufIndex(const RwCBufIndex&) = delete;
-  RwCBufIndex(const RwCBufIndex&&) = delete;
-  RwCBufIndex& operator=(const RwCBufIndex&) = delete;
-  RwCBufIndex& operator=(const RwCBufIndex&&) = delete;
-
-  /**
-   * @brief Pre-increment operator, return a copy of the index value
-   */
-  size_type operator++() noexcept {
-    i = size_type(++i % SIZE);
-    return i;
-  };
-
-  /**
-   * @brief Post-increment operator, return a copy of the index value
-   */
-  size_type operator++(int) noexcept {
-    size_type ret{i};
-    i = size_type(++i % SIZE);
-    return ret;
-  };
-
-  /**
-   * @brief Operator (), returns a copy of the current index value
-   */
-  size_type operator()() noexcept { return i; }
-
-  /**
-   * @brief Reset the value of index to zero
-   */
-  void reset() noexcept { i = 0; }
-
- private:
-  size_type i{};  ///< Index value
-};
-
 /**
  * @brief Rewritable FIFO Ring Buffer Template Class
  * @note There are two operation modes: Rewrite mode and Non-Rewrite mode. @n
  * Mode is set by a constructor parameter or by a parameter of the Reset()
  * method. @n In Rewrite mode the fill flag is not set.
- * @param[in] SIZE - buffer size (size_type)
- * @param[in] T - type of buffer items (default - unsigned char)
+ * @param[in] SIZE - buffer size
+ * @param[in] T - type of buffer items
  */
 
-template <size_type SIZE, typename T = unsigned char>
+template <size_t SIZE, typename T>
 class RwCBuf {
   static_assert(SIZE > 1, "RwCBuf::SIZE must be at least 2");
 
-  using value_type = T;
-
  public:
+  using value_type = T;              ///< Type of buffer items
+  using size_type = decltype(SIZE);  ///< Array index type
+
+  static constexpr size_type size = SIZE;
+
   enum class rwType : bool  ///< Buffer operation mode
   {
     nonRwBuf = false,  ///< Non-Rewrite mode
@@ -84,7 +35,55 @@ class RwCBuf {
   };
 
  private:
-  T _data[SIZE]{};  ///< Buffer Array
+  /**
+   * @brief Ring Buffer Index Template Class
+   * @note Implemented as a wrapper over size_type @n
+   * Default constructor. Other constructors and @n
+   * assignment operators are prohibited.
+   * @param[in] INDEX_SIZE - buffer size
+   */
+
+  template <size_type INDEX_SIZE>
+  class RwCBufIndex {
+   public:
+    RwCBufIndex() = default;
+    RwCBufIndex(const RwCBufIndex&) = delete;
+    RwCBufIndex(const RwCBufIndex&&) = delete;
+    RwCBufIndex& operator=(const RwCBufIndex&) = delete;
+    RwCBufIndex& operator=(const RwCBufIndex&&) = delete;
+
+    /**
+     * @brief Pre-increment operator, return a copy of the index value
+     */
+    size_type operator++() noexcept {
+      i = size_type(++i % INDEX_SIZE);
+      return i;
+    };
+
+    /**
+     * @brief Post-increment operator, return a copy of the index value
+     */
+    size_type operator++(int) noexcept {
+      size_type ret{i};
+      i = size_type(++i % INDEX_SIZE);
+      return ret;
+    };
+
+    /**
+     * @brief Operator (), returns a copy of the current index value
+     */
+    size_type operator()() noexcept { return i; }
+
+    /**
+     * @brief Reset the value of index to zero
+     */
+    void reset() noexcept { i = 0; }
+
+   private:
+    size_type i{};  ///< Index value
+  };
+
+  value_type _data[SIZE]{};  ///< Buffer Array
 
   RwCBufIndex<SIZE> _begin;  ///< Data start index
   RwCBufIndex<SIZE> _end;    ///< Data end index
@@ -98,9 +97,9 @@ class RwCBuf {
  public:
   /**
    * @brief Constructor with operation mode setting
-   * @param[in] RW - operation mode (default - Non-Rewrite mode)
+   * @param[in] RW - operation mode (default - Rewrite mode)
    */
-  explicit RwCBuf(rwType RW = rwType::nonRwBuf) noexcept : _reWriteMode(RW) {}
+  explicit RwCBuf(rwType RW = rwType::rwBuf) noexcept : _reWriteMode{RW} {}
 
   RwCBuf(const RwCBuf&) = delete;
   RwCBuf(const RwCBuf&&) = delete;
@@ -166,7 +165,7 @@ class RwCBuf {
    * @param[in] value - value by constant reference to write
    * @return bool - result of writing
    */
-  bool write(const T& value) noexcept {
+  bool write(const value_type& value) noexcept {
     if (_isFull) return false;
 
     if (!_isEmpty && (_end() == _begin())) {
@@ -189,7 +188,7 @@ class RwCBuf {
    * @param[out] value - reference for return value
    * @return bool - result of extracting
    */
-  bool read(T& value) noexcept {
+  bool read(value_type& value) noexcept {
     if (_isEmpty) return false;
     value = _data[_begin++];
     if (_end() == _begin()) _isEmpty = true;
@@ -226,7 +225,7 @@ class RwCBuf {
    * @param[in] value - takes a value by constant reference
    * @return RwCBuf& - pointer to class instance
    */
-  RwCBuf& operator<<(const T& value) noexcept {
+  RwCBuf& operator<<(const value_type& value) noexcept {
     write(value);
     return *this;
   }
@@ -237,7 +236,7 @@ class RwCBuf {
    * @param[out] value - return a value by reference
    * @return RwCBuf& - pointer to class instance
    */
-  RwCBuf& operator>>(T& value) noexcept {
+  RwCBuf& operator>>(value_type& value) noexcept {
     read(value);
     return *this;
   }
@@ -246,7 +245,7 @@ class RwCBuf {
    * @brief Direct access to the buffer array
    * @note Safe: out of bounds is not possible.
    * @param[in] i - index from 0 to SIZE-1
-   * @return T& - reference to array item with index i
+   * @return value_type& - reference to array item with index i
    */
-  T& operator[](const size_type i) noexcept { return _data[i % SIZE]; }
+  value_type& operator[](const size_type i) noexcept { return _data[i % SIZE]; }
 };

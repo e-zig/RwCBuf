@@ -53,8 +53,11 @@ $(document).ready(function(){initNavTree('class_rw_c_buf.html',''); initResizabl
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_rw_c_buf-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">RwCBuf&lt; SIZE, T &gt; Class Template Reference</div>  </div>
@@ -66,36 +69,43 @@ $(document).ready(function(){initNavTree('class_rw_c_buf.html',''); initResizabl
 
 <p><code>#include &lt;<a class="el" href="_rw_c_buf_8hpp_source.html">RwCBuf.hpp</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf_1_1_rw_c_buf_index.html">RwCBufIndex</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ring Buffer Index Template Class.  <a href="class_rw_c_buf_1_1_rw_c_buf_index.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a299e48c3a3464c00ccf49b8b2a7ff82c"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#a299e48c3a3464c00ccf49b8b2a7ff82c">rwType</a> : bool { <a class="el" href="class_rw_c_buf.html#a299e48c3a3464c00ccf49b8b2a7ff82cad0d6a5084c8737ba4d6062a743b79461">nonRwBuf</a> = false
 , <a class="el" href="class_rw_c_buf.html#a299e48c3a3464c00ccf49b8b2a7ff82ca7c61fd27a0608a8d5308bd581dc786f1">rwBuf</a> = true
  }</td></tr>
 <tr class="separator:a299e48c3a3464c00ccf49b8b2a7ff82c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a605f83f25d52084a4a8b64fc56c8bc60"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#a605f83f25d52084a4a8b64fc56c8bc60">value_type</a> = T</td></tr>
+<tr class="memdesc:a605f83f25d52084a4a8b64fc56c8bc60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of buffer items.  <a href="class_rw_c_buf.html#a605f83f25d52084a4a8b64fc56c8bc60">More...</a><br /></td></tr>
+<tr class="separator:a605f83f25d52084a4a8b64fc56c8bc60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b6498b3e1037c7d7cf3228f1c5afb40"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#a1b6498b3e1037c7d7cf3228f1c5afb40">size_type</a> = decltype(SIZE)</td></tr>
+<tr class="memdesc:a1b6498b3e1037c7d7cf3228f1c5afb40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array index type.  <a href="class_rw_c_buf.html#a1b6498b3e1037c7d7cf3228f1c5afb40">More...</a><br /></td></tr>
+<tr class="separator:a1b6498b3e1037c7d7cf3228f1c5afb40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4c066514b8d8718dc3a96b8db516dbd3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#a4c066514b8d8718dc3a96b8db516dbd3">RwCBuf</a> (<a class="el" href="class_rw_c_buf.html#a299e48c3a3464c00ccf49b8b2a7ff82c">rwType</a> RW=<a class="el" href="class_rw_c_buf.html#a299e48c3a3464c00ccf49b8b2a7ff82cad0d6a5084c8737ba4d6062a743b79461">rwType::nonRwBuf</a>) noexcept</td></tr>
-<tr class="memdesc:a4c066514b8d8718dc3a96b8db516dbd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with operation mode setting.  <a href="class_rw_c_buf.html#a4c066514b8d8718dc3a96b8db516dbd3">More...</a><br /></td></tr>
-<tr class="separator:a4c066514b8d8718dc3a96b8db516dbd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec7e5560a98830d843fb06f8af637ac0"><td class="memItemLeft" align="right" valign="top"><a id="aec7e5560a98830d843fb06f8af637ac0"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>RwCBuf</b> (const <a class="el" href="class_rw_c_buf.html">RwCBuf</a> &amp;)=delete</td></tr>
+<tr class="memitem:a37848dad2582ec69fd5dfe415bc2b60f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#a37848dad2582ec69fd5dfe415bc2b60f">RwCBuf</a> (<a class="el" href="class_rw_c_buf.html#a299e48c3a3464c00ccf49b8b2a7ff82c">rwType</a> RW=<a class="el" href="class_rw_c_buf.html#a299e48c3a3464c00ccf49b8b2a7ff82ca7c61fd27a0608a8d5308bd581dc786f1">rwType::rwBuf</a>) noexcept</td></tr>
+<tr class="memdesc:a37848dad2582ec69fd5dfe415bc2b60f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with operation mode setting.  <a href="class_rw_c_buf.html#a37848dad2582ec69fd5dfe415bc2b60f">More...</a><br /></td></tr>
+<tr class="separator:a37848dad2582ec69fd5dfe415bc2b60f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec7e5560a98830d843fb06f8af637ac0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#aec7e5560a98830d843fb06f8af637ac0">RwCBuf</a> (const <a class="el" href="class_rw_c_buf.html">RwCBuf</a> &amp;)=delete</td></tr>
 <tr class="separator:aec7e5560a98830d843fb06f8af637ac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af360944af2a27ff5847fbc99d3fb881e"><td class="memItemLeft" align="right" valign="top"><a id="af360944af2a27ff5847fbc99d3fb881e"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>RwCBuf</b> (const <a class="el" href="class_rw_c_buf.html">RwCBuf</a> &amp;&amp;)=delete</td></tr>
+<tr class="memitem:af360944af2a27ff5847fbc99d3fb881e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#af360944af2a27ff5847fbc99d3fb881e">RwCBuf</a> (const <a class="el" href="class_rw_c_buf.html">RwCBuf</a> &amp;&amp;)=delete</td></tr>
 <tr class="separator:af360944af2a27ff5847fbc99d3fb881e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e0e5fa914312632bf564a3e2c891dd3"><td class="memItemLeft" align="right" valign="top"><a id="a3e0e5fa914312632bf564a3e2c891dd3"></a>
-<a class="el" href="class_rw_c_buf.html">RwCBuf</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="class_rw_c_buf.html">RwCBuf</a> &amp;)=delete</td></tr>
+<tr class="memitem:a3e0e5fa914312632bf564a3e2c891dd3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_rw_c_buf.html">RwCBuf</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#a3e0e5fa914312632bf564a3e2c891dd3">operator=</a> (const <a class="el" href="class_rw_c_buf.html">RwCBuf</a> &amp;)=delete</td></tr>
 <tr class="separator:a3e0e5fa914312632bf564a3e2c891dd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb8631b03b3c9bf135525b210d3e0395"><td class="memItemLeft" align="right" valign="top"><a id="adb8631b03b3c9bf135525b210d3e0395"></a>
-<a class="el" href="class_rw_c_buf.html">RwCBuf</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="class_rw_c_buf.html">RwCBuf</a> &amp;&amp;)=delete</td></tr>
+<tr class="memitem:adb8631b03b3c9bf135525b210d3e0395"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_rw_c_buf.html">RwCBuf</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#adb8631b03b3c9bf135525b210d3e0395">operator=</a> (const <a class="el" href="class_rw_c_buf.html">RwCBuf</a> &amp;&amp;)=delete</td></tr>
 <tr class="separator:adb8631b03b3c9bf135525b210d3e0395"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d9a9ef1480d7830f23778d2563959c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#a6d9a9ef1480d7830f23778d2563959c3">reset</a> (<a class="el" href="class_rw_c_buf.html#a299e48c3a3464c00ccf49b8b2a7ff82c">rwType</a> RW) noexcept</td></tr>
 <tr class="memdesc:a6d9a9ef1480d7830f23778d2563959c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear buffer and set operation mode.  <a href="class_rw_c_buf.html#a6d9a9ef1480d7830f23778d2563959c3">More...</a><br /></td></tr>
 <tr class="separator:a6d9a9ef1480d7830f23778d2563959c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a025c6477b57bffb0be63d46c91585e2f"><td class="memItemLeft" align="right" valign="top"><a id="a025c6477b57bffb0be63d46c91585e2f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#a025c6477b57bffb0be63d46c91585e2f">clear</a> () noexcept</td></tr>
-<tr class="memdesc:a025c6477b57bffb0be63d46c91585e2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear buffer. <br /></td></tr>
+<tr class="memitem:a025c6477b57bffb0be63d46c91585e2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#a025c6477b57bffb0be63d46c91585e2f">clear</a> () noexcept</td></tr>
+<tr class="memdesc:a025c6477b57bffb0be63d46c91585e2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear buffer.  <a href="class_rw_c_buf.html#a025c6477b57bffb0be63d46c91585e2f">More...</a><br /></td></tr>
 <tr class="separator:a025c6477b57bffb0be63d46c91585e2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ff3e5e3ff09750cc1c8fadb4721b518"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_rw_c_buf.html#a299e48c3a3464c00ccf49b8b2a7ff82c">rwType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#a9ff3e5e3ff09750cc1c8fadb4721b518">reWriteMode</a> () noexcept</td></tr>
 <tr class="memdesc:a9ff3e5e3ff09750cc1c8fadb4721b518"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current operation mode.  <a href="class_rw_c_buf.html#a9ff3e5e3ff09750cc1c8fadb4721b518">More...</a><br /></td></tr>
@@ -110,36 +120,62 @@ in Rewrite mode. In Non-Rewrite mode flag always clear.  <a href="class_rw_c_buf
 <tr class="memitem:a931b9795df38a7321d76b07daf721469"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#a931b9795df38a7321d76b07daf721469">isEmpty</a> () noexcept</td></tr>
 <tr class="memdesc:a931b9795df38a7321d76b07daf721469"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the empty buffer flag.  <a href="class_rw_c_buf.html#a931b9795df38a7321d76b07daf721469">More...</a><br /></td></tr>
 <tr class="separator:a931b9795df38a7321d76b07daf721469"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22a2f08ffabf2618666029b18bec628b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#a22a2f08ffabf2618666029b18bec628b">write</a> (const T &amp;value) noexcept</td></tr>
-<tr class="memdesc:a22a2f08ffabf2618666029b18bec628b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writing a value to a buffer.  <a href="class_rw_c_buf.html#a22a2f08ffabf2618666029b18bec628b">More...</a><br /></td></tr>
-<tr class="separator:a22a2f08ffabf2618666029b18bec628b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acca07b851365411b3857fc2a8c8770b3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#acca07b851365411b3857fc2a8c8770b3">read</a> (T &amp;value) noexcept</td></tr>
-<tr class="memdesc:acca07b851365411b3857fc2a8c8770b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracting the first item from the buffer.  <a href="class_rw_c_buf.html#acca07b851365411b3857fc2a8c8770b3">More...</a><br /></td></tr>
-<tr class="separator:acca07b851365411b3857fc2a8c8770b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e0ede0e16a2ea4e44a3282208eedb3d"><td class="memItemLeft" align="right" valign="top"><a id="a1e0ede0e16a2ea4e44a3282208eedb3d"></a>
-<a class="el" href="_rw_c_buf_8hpp.html#a8560ac5527cd0ed38d71e0e58acc8021">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#a1e0ede0e16a2ea4e44a3282208eedb3d">count</a> () noexcept</td></tr>
-<tr class="memdesc:a1e0ede0e16a2ea4e44a3282208eedb3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of items in the buffer. <br /></td></tr>
+<tr class="memitem:a5af5870a077dcaff489f7f8cca1bcfbb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#a5af5870a077dcaff489f7f8cca1bcfbb">write</a> (const <a class="el" href="class_rw_c_buf.html#a605f83f25d52084a4a8b64fc56c8bc60">value_type</a> &amp;value) noexcept</td></tr>
+<tr class="memdesc:a5af5870a077dcaff489f7f8cca1bcfbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writing a value to a buffer.  <a href="class_rw_c_buf.html#a5af5870a077dcaff489f7f8cca1bcfbb">More...</a><br /></td></tr>
+<tr class="separator:a5af5870a077dcaff489f7f8cca1bcfbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27bc8f2965c3fc9fc752b79be050cd5d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#a27bc8f2965c3fc9fc752b79be050cd5d">read</a> (<a class="el" href="class_rw_c_buf.html#a605f83f25d52084a4a8b64fc56c8bc60">value_type</a> &amp;value) noexcept</td></tr>
+<tr class="memdesc:a27bc8f2965c3fc9fc752b79be050cd5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracting the first item from the buffer.  <a href="class_rw_c_buf.html#a27bc8f2965c3fc9fc752b79be050cd5d">More...</a><br /></td></tr>
+<tr class="separator:a27bc8f2965c3fc9fc752b79be050cd5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e0ede0e16a2ea4e44a3282208eedb3d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_rw_c_buf.html#a1b6498b3e1037c7d7cf3228f1c5afb40">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#a1e0ede0e16a2ea4e44a3282208eedb3d">count</a> () noexcept</td></tr>
+<tr class="memdesc:a1e0ede0e16a2ea4e44a3282208eedb3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of items in the buffer.  <a href="class_rw_c_buf.html#a1e0ede0e16a2ea4e44a3282208eedb3d">More...</a><br /></td></tr>
 <tr class="separator:a1e0ede0e16a2ea4e44a3282208eedb3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1fc73f0cfb724e336b6e05e077c0af5"><td class="memItemLeft" align="right" valign="top"><a id="aa1fc73f0cfb724e336b6e05e077c0af5"></a>
-<a class="el" href="_rw_c_buf_8hpp.html#a8560ac5527cd0ed38d71e0e58acc8021">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#aa1fc73f0cfb724e336b6e05e077c0af5">begin</a> () noexcept</td></tr>
-<tr class="memdesc:aa1fc73f0cfb724e336b6e05e077c0af5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of the buffer array with the first item. <br /></td></tr>
+<tr class="memitem:aa1fc73f0cfb724e336b6e05e077c0af5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_rw_c_buf.html#a1b6498b3e1037c7d7cf3228f1c5afb40">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#aa1fc73f0cfb724e336b6e05e077c0af5">begin</a> () noexcept</td></tr>
+<tr class="memdesc:aa1fc73f0cfb724e336b6e05e077c0af5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of the buffer array with the first item.  <a href="class_rw_c_buf.html#aa1fc73f0cfb724e336b6e05e077c0af5">More...</a><br /></td></tr>
 <tr class="separator:aa1fc73f0cfb724e336b6e05e077c0af5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cd58b6d97c211316e9981df7181e64f"><td class="memItemLeft" align="right" valign="top"><a id="a4cd58b6d97c211316e9981df7181e64f"></a>
-<a class="el" href="_rw_c_buf_8hpp.html#a8560ac5527cd0ed38d71e0e58acc8021">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#a4cd58b6d97c211316e9981df7181e64f">end</a> () noexcept</td></tr>
-<tr class="memdesc:a4cd58b6d97c211316e9981df7181e64f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of the buffer array after the last item. <br /></td></tr>
+<tr class="memitem:a4cd58b6d97c211316e9981df7181e64f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_rw_c_buf.html#a1b6498b3e1037c7d7cf3228f1c5afb40">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#a4cd58b6d97c211316e9981df7181e64f">end</a> () noexcept</td></tr>
+<tr class="memdesc:a4cd58b6d97c211316e9981df7181e64f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of the buffer array after the last item.  <a href="class_rw_c_buf.html#a4cd58b6d97c211316e9981df7181e64f">More...</a><br /></td></tr>
 <tr class="separator:a4cd58b6d97c211316e9981df7181e64f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c6bea77aaf5e38c403f17fc87bc7aff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_rw_c_buf.html">RwCBuf</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#a0c6bea77aaf5e38c403f17fc87bc7aff">operator&lt;&lt;</a> (const T &amp;value) noexcept</td></tr>
-<tr class="memdesc:a0c6bea77aaf5e38c403f17fc87bc7aff"><td class="mdescLeft">&#160;</td><td class="mdescRight">The input operator as a replacement for the <a class="el" href="class_rw_c_buf.html#a22a2f08ffabf2618666029b18bec628b" title="Writing a value to a buffer.">write()</a> method.  <a href="class_rw_c_buf.html#a0c6bea77aaf5e38c403f17fc87bc7aff">More...</a><br /></td></tr>
-<tr class="separator:a0c6bea77aaf5e38c403f17fc87bc7aff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a913dcd270392fb247c9c62d11de38c05"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_rw_c_buf.html">RwCBuf</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#a913dcd270392fb247c9c62d11de38c05">operator&gt;&gt;</a> (T &amp;value) noexcept</td></tr>
-<tr class="memdesc:a913dcd270392fb247c9c62d11de38c05"><td class="mdescLeft">&#160;</td><td class="mdescRight">The output operator as a replacement for the <a class="el" href="class_rw_c_buf.html#acca07b851365411b3857fc2a8c8770b3" title="Extracting the first item from the buffer.">read()</a> method.  <a href="class_rw_c_buf.html#a913dcd270392fb247c9c62d11de38c05">More...</a><br /></td></tr>
-<tr class="separator:a913dcd270392fb247c9c62d11de38c05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a626c6dc56f1a7a4d087fdfb97f50d613"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#a626c6dc56f1a7a4d087fdfb97f50d613">operator[]</a> (const <a class="el" href="_rw_c_buf_8hpp.html#a8560ac5527cd0ed38d71e0e58acc8021">size_type</a> i) noexcept</td></tr>
-<tr class="memdesc:a626c6dc56f1a7a4d087fdfb97f50d613"><td class="mdescLeft">&#160;</td><td class="mdescRight">Direct access to the buffer array.  <a href="class_rw_c_buf.html#a626c6dc56f1a7a4d087fdfb97f50d613">More...</a><br /></td></tr>
-<tr class="separator:a626c6dc56f1a7a4d087fdfb97f50d613"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a403f9f51053265499a6bae129cbaca38"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_rw_c_buf.html">RwCBuf</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#a403f9f51053265499a6bae129cbaca38">operator&lt;&lt;</a> (const <a class="el" href="class_rw_c_buf.html#a605f83f25d52084a4a8b64fc56c8bc60">value_type</a> &amp;value) noexcept</td></tr>
+<tr class="memdesc:a403f9f51053265499a6bae129cbaca38"><td class="mdescLeft">&#160;</td><td class="mdescRight">The input operator as a replacement for the <a class="el" href="class_rw_c_buf.html#a5af5870a077dcaff489f7f8cca1bcfbb" title="Writing a value to a buffer.">write()</a> method.  <a href="class_rw_c_buf.html#a403f9f51053265499a6bae129cbaca38">More...</a><br /></td></tr>
+<tr class="separator:a403f9f51053265499a6bae129cbaca38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab229cbc8028bc105c77edf4c94a571c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_rw_c_buf.html">RwCBuf</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#ab229cbc8028bc105c77edf4c94a571c6">operator&gt;&gt;</a> (<a class="el" href="class_rw_c_buf.html#a605f83f25d52084a4a8b64fc56c8bc60">value_type</a> &amp;value) noexcept</td></tr>
+<tr class="memdesc:ab229cbc8028bc105c77edf4c94a571c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The output operator as a replacement for the <a class="el" href="class_rw_c_buf.html#a27bc8f2965c3fc9fc752b79be050cd5d" title="Extracting the first item from the buffer.">read()</a> method.  <a href="class_rw_c_buf.html#ab229cbc8028bc105c77edf4c94a571c6">More...</a><br /></td></tr>
+<tr class="separator:ab229cbc8028bc105c77edf4c94a571c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d838da382d201577de96f0e78bf2e6e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_rw_c_buf.html#a605f83f25d52084a4a8b64fc56c8bc60">value_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#a1d838da382d201577de96f0e78bf2e6e">operator[]</a> (const <a class="el" href="class_rw_c_buf.html#a1b6498b3e1037c7d7cf3228f1c5afb40">size_type</a> i) noexcept</td></tr>
+<tr class="memdesc:a1d838da382d201577de96f0e78bf2e6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Direct access to the buffer array.  <a href="class_rw_c_buf.html#a1d838da382d201577de96f0e78bf2e6e">More...</a><br /></td></tr>
+<tr class="separator:a1d838da382d201577de96f0e78bf2e6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a2224f7e09f46d9e19d51e2d09e86bc8e"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="class_rw_c_buf.html#a1b6498b3e1037c7d7cf3228f1c5afb40">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#a2224f7e09f46d9e19d51e2d09e86bc8e">size</a> = SIZE</td></tr>
+<tr class="separator:a2224f7e09f46d9e19d51e2d09e86bc8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:af64547efd6e9b89cf41d62d67bb16433"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_rw_c_buf.html#a605f83f25d52084a4a8b64fc56c8bc60">value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#af64547efd6e9b89cf41d62d67bb16433">_data</a> [SIZE] {}</td></tr>
+<tr class="memdesc:af64547efd6e9b89cf41d62d67bb16433"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buffer Array.  <a href="class_rw_c_buf.html#af64547efd6e9b89cf41d62d67bb16433">More...</a><br /></td></tr>
+<tr class="separator:af64547efd6e9b89cf41d62d67bb16433"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5592fef1f0937e818eb1ae7bcd895bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_rw_c_buf_1_1_rw_c_buf_index.html">RwCBufIndex</a>&lt; SIZE &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#af5592fef1f0937e818eb1ae7bcd895bf">_begin</a></td></tr>
+<tr class="memdesc:af5592fef1f0937e818eb1ae7bcd895bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data start index.  <a href="class_rw_c_buf.html#af5592fef1f0937e818eb1ae7bcd895bf">More...</a><br /></td></tr>
+<tr class="separator:af5592fef1f0937e818eb1ae7bcd895bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4c0c12977f4f9677d171952c7c42c8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_rw_c_buf_1_1_rw_c_buf_index.html">RwCBufIndex</a>&lt; SIZE &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#ad4c0c12977f4f9677d171952c7c42c8e">_end</a></td></tr>
+<tr class="memdesc:ad4c0c12977f4f9677d171952c7c42c8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data end index.  <a href="class_rw_c_buf.html#ad4c0c12977f4f9677d171952c7c42c8e">More...</a><br /></td></tr>
+<tr class="separator:ad4c0c12977f4f9677d171952c7c42c8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a714c1d0c357e7dfe47b1e3d866dc5ac2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_rw_c_buf.html#a299e48c3a3464c00ccf49b8b2a7ff82c">rwType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#a714c1d0c357e7dfe47b1e3d866dc5ac2">_reWriteMode</a></td></tr>
+<tr class="memdesc:a714c1d0c357e7dfe47b1e3d866dc5ac2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operation mode.  <a href="class_rw_c_buf.html#a714c1d0c357e7dfe47b1e3d866dc5ac2">More...</a><br /></td></tr>
+<tr class="separator:a714c1d0c357e7dfe47b1e3d866dc5ac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a084f9ae22c59edd22f32a08208b39bd6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#a084f9ae22c59edd22f32a08208b39bd6">_isOverwritten</a> {}</td></tr>
+<tr class="memdesc:a084f9ae22c59edd22f32a08208b39bd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">An indication that an overwrite has occurred.  <a href="class_rw_c_buf.html#a084f9ae22c59edd22f32a08208b39bd6">More...</a><br /></td></tr>
+<tr class="separator:a084f9ae22c59edd22f32a08208b39bd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad57427e615505924e444a35d12bbf0fb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#ad57427e615505924e444a35d12bbf0fb">_isEmpty</a> {true}</td></tr>
+<tr class="memdesc:ad57427e615505924e444a35d12bbf0fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty buffer flag.  <a href="class_rw_c_buf.html#ad57427e615505924e444a35d12bbf0fb">More...</a><br /></td></tr>
+<tr class="separator:ad57427e615505924e444a35d12bbf0fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf26beb5a5e5c8a024803e489be22b19"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rw_c_buf.html#adf26beb5a5e5c8a024803e489be22b19">_isFull</a> {}</td></tr>
+<tr class="memdesc:adf26beb5a5e5c8a024803e489be22b19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Full buffer flag.  <a href="class_rw_c_buf.html#adf26beb5a5e5c8a024803e489be22b19">More...</a><br /></td></tr>
+<tr class="separator:adf26beb5a5e5c8a024803e489be22b19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;size_type SIZE, typename T = unsigned char&gt;<br />
+<div class="textblock"><h3>template&lt;size_t SIZE, typename T&gt;<br />
 class RwCBuf&lt; SIZE, T &gt;</h3>
 
 <p>Rewritable FIFO Ring Buffer Template Class. </p>
@@ -148,19 +184,56 @@ Mode is set by a constructor parameter or by a parameter of the Reset() method. 
  In Rewrite mode the fill flag is not set. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">SIZE</td><td>- buffer size (size_type) </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">T</td><td>- type of buffer items (default - unsigned char) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">SIZE</td><td>- buffer size </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">T</td><td>- type of buffer items </td></tr>
   </table>
   </dd>
 </dl>
-</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a1b6498b3e1037c7d7cf3228f1c5afb40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b6498b3e1037c7d7cf3228f1c5afb40">&#9670;&nbsp;</a></span>size_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t SIZE, typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="class_rw_c_buf.html">RwCBuf</a>&lt; SIZE, T &gt;::<a class="el" href="class_rw_c_buf.html#a1b6498b3e1037c7d7cf3228f1c5afb40">size_type</a> =  decltype(SIZE)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Array index type. </p>
+
+</div>
+</div>
+<a id="a605f83f25d52084a4a8b64fc56c8bc60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a605f83f25d52084a4a8b64fc56c8bc60">&#9670;&nbsp;</a></span>value_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t SIZE, typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="class_rw_c_buf.html">RwCBuf</a>&lt; SIZE, T &gt;::<a class="el" href="class_rw_c_buf.html#a605f83f25d52084a4a8b64fc56c8bc60">value_type</a> =  T</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Type of buffer items. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a299e48c3a3464c00ccf49b8b2a7ff82c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a299e48c3a3464c00ccf49b8b2a7ff82c">&#9670;&nbsp;</a></span>rwType</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;size_type SIZE, typename T  = unsigned char&gt; </div>
+template&lt;size_t SIZE, typename T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -185,13 +258,13 @@ template&lt;size_type SIZE, typename T  = unsigned char&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a4c066514b8d8718dc3a96b8db516dbd3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c066514b8d8718dc3a96b8db516dbd3">&#9670;&nbsp;</a></span>RwCBuf()</h2>
+<a id="a37848dad2582ec69fd5dfe415bc2b60f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37848dad2582ec69fd5dfe415bc2b60f">&#9670;&nbsp;</a></span>RwCBuf() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;size_type SIZE, typename T  = unsigned char&gt; </div>
+template&lt;size_t SIZE, typename T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -200,7 +273,7 @@ template&lt;size_type SIZE, typename T  = unsigned char&gt; </div>
           <td class="memname"><a class="el" href="class_rw_c_buf.html">RwCBuf</a>&lt; SIZE, T &gt;::<a class="el" href="class_rw_c_buf.html">RwCBuf</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_rw_c_buf.html#a299e48c3a3464c00ccf49b8b2a7ff82c">rwType</a>&#160;</td>
-          <td class="paramname"><em>RW</em> = <code><a class="el" href="class_rw_c_buf.html#a299e48c3a3464c00ccf49b8b2a7ff82cad0d6a5084c8737ba4d6062a743b79461">rwType::nonRwBuf</a></code></td><td>)</td>
+          <td class="paramname"><em>RW</em> = <code><a class="el" href="class_rw_c_buf.html#a299e48c3a3464c00ccf49b8b2a7ff82ca7c61fd27a0608a8d5308bd581dc786f1">rwType::rwBuf</a></code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -214,21 +287,193 @@ template&lt;size_type SIZE, typename T  = unsigned char&gt; </div>
 <p>Constructor with operation mode setting. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">RW</td><td>- operation mode (default - Non-Rewrite mode) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">RW</td><td>- operation mode (default - Rewrite mode) </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
+<a id="aec7e5560a98830d843fb06f8af637ac0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec7e5560a98830d843fb06f8af637ac0">&#9670;&nbsp;</a></span>RwCBuf() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t SIZE, typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_rw_c_buf.html">RwCBuf</a>&lt; SIZE, T &gt;::<a class="el" href="class_rw_c_buf.html">RwCBuf</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_rw_c_buf.html">RwCBuf</a>&lt; SIZE, T &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af360944af2a27ff5847fbc99d3fb881e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af360944af2a27ff5847fbc99d3fb881e">&#9670;&nbsp;</a></span>RwCBuf() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t SIZE, typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_rw_c_buf.html">RwCBuf</a>&lt; SIZE, T &gt;::<a class="el" href="class_rw_c_buf.html">RwCBuf</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_rw_c_buf.html">RwCBuf</a>&lt; SIZE, T &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa1fc73f0cfb724e336b6e05e077c0af5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1fc73f0cfb724e336b6e05e077c0af5">&#9670;&nbsp;</a></span>begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t SIZE, typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_rw_c_buf.html#a1b6498b3e1037c7d7cf3228f1c5afb40">size_type</a> <a class="el" href="class_rw_c_buf.html">RwCBuf</a>&lt; SIZE, T &gt;::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Index of the buffer array with the first item. </p>
+
+</div>
+</div>
+<a id="a025c6477b57bffb0be63d46c91585e2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a025c6477b57bffb0be63d46c91585e2f">&#9670;&nbsp;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t SIZE, typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_rw_c_buf.html">RwCBuf</a>&lt; SIZE, T &gt;::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Clear buffer. </p>
+
+</div>
+</div>
+<a id="a1e0ede0e16a2ea4e44a3282208eedb3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e0ede0e16a2ea4e44a3282208eedb3d">&#9670;&nbsp;</a></span>count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t SIZE, typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_rw_c_buf.html#a1b6498b3e1037c7d7cf3228f1c5afb40">size_type</a> <a class="el" href="class_rw_c_buf.html">RwCBuf</a>&lt; SIZE, T &gt;::count </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the number of items in the buffer. </p>
+
+</div>
+</div>
+<a id="a4cd58b6d97c211316e9981df7181e64f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cd58b6d97c211316e9981df7181e64f">&#9670;&nbsp;</a></span>end()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t SIZE, typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_rw_c_buf.html#a1b6498b3e1037c7d7cf3228f1c5afb40">size_type</a> <a class="el" href="class_rw_c_buf.html">RwCBuf</a>&lt; SIZE, T &gt;::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Index of the buffer array after the last item. </p>
+
+</div>
+</div>
 <a id="a931b9795df38a7321d76b07daf721469"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a931b9795df38a7321d76b07daf721469">&#9670;&nbsp;</a></span>isEmpty()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;size_type SIZE, typename T  = unsigned char&gt; </div>
+template&lt;size_t SIZE, typename T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -258,7 +503,7 @@ template&lt;size_type SIZE, typename T  = unsigned char&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;size_type SIZE, typename T  = unsigned char&gt; </div>
+template&lt;size_t SIZE, typename T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -289,7 +534,7 @@ template&lt;size_type SIZE, typename T  = unsigned char&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;size_type SIZE, typename T  = unsigned char&gt; </div>
+template&lt;size_t SIZE, typename T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -315,13 +560,13 @@ in Rewrite mode. In Non-Rewrite mode flag always clear. </p>
 
 </div>
 </div>
-<a id="a0c6bea77aaf5e38c403f17fc87bc7aff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c6bea77aaf5e38c403f17fc87bc7aff">&#9670;&nbsp;</a></span>operator&lt;&lt;()</h2>
+<a id="a403f9f51053265499a6bae129cbaca38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a403f9f51053265499a6bae129cbaca38">&#9670;&nbsp;</a></span>operator&lt;&lt;()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;size_type SIZE, typename T  = unsigned char&gt; </div>
+template&lt;size_t SIZE, typename T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -329,7 +574,7 @@ template&lt;size_type SIZE, typename T  = unsigned char&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="class_rw_c_buf.html">RwCBuf</a>&amp; <a class="el" href="class_rw_c_buf.html">RwCBuf</a>&lt; SIZE, T &gt;::operator&lt;&lt; </td>
           <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="class_rw_c_buf.html#a605f83f25d52084a4a8b64fc56c8bc60">value_type</a> &amp;&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
@@ -341,7 +586,7 @@ template&lt;size_type SIZE, typename T  = unsigned char&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>The input operator as a replacement for the <a class="el" href="class_rw_c_buf.html#a22a2f08ffabf2618666029b18bec628b" title="Writing a value to a buffer.">write()</a> method. </p>
+<p>The input operator as a replacement for the <a class="el" href="class_rw_c_buf.html#a5af5870a077dcaff489f7f8cca1bcfbb" title="Writing a value to a buffer.">write()</a> method. </p>
 <dl class="section note"><dt>Note</dt><dd>The result of the write is not checked here. <br  />
 In Rewrite mode write always succesfull </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -354,13 +599,69 @@ In Rewrite mode write always succesfull </dd></dl>
 
 </div>
 </div>
-<a id="a913dcd270392fb247c9c62d11de38c05"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a913dcd270392fb247c9c62d11de38c05">&#9670;&nbsp;</a></span>operator&gt;&gt;()</h2>
+<a id="adb8631b03b3c9bf135525b210d3e0395"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb8631b03b3c9bf135525b210d3e0395">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;size_type SIZE, typename T  = unsigned char&gt; </div>
+template&lt;size_t SIZE, typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_rw_c_buf.html">RwCBuf</a>&amp; <a class="el" href="class_rw_c_buf.html">RwCBuf</a>&lt; SIZE, T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_rw_c_buf.html">RwCBuf</a>&lt; SIZE, T &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3e0e5fa914312632bf564a3e2c891dd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e0e5fa914312632bf564a3e2c891dd3">&#9670;&nbsp;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t SIZE, typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_rw_c_buf.html">RwCBuf</a>&amp; <a class="el" href="class_rw_c_buf.html">RwCBuf</a>&lt; SIZE, T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_rw_c_buf.html">RwCBuf</a>&lt; SIZE, T &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab229cbc8028bc105c77edf4c94a571c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab229cbc8028bc105c77edf4c94a571c6">&#9670;&nbsp;</a></span>operator&gt;&gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t SIZE, typename T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -368,7 +669,7 @@ template&lt;size_type SIZE, typename T  = unsigned char&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="class_rw_c_buf.html">RwCBuf</a>&amp; <a class="el" href="class_rw_c_buf.html">RwCBuf</a>&lt; SIZE, T &gt;::operator&gt;&gt; </td>
           <td>(</td>
-          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="class_rw_c_buf.html#a605f83f25d52084a4a8b64fc56c8bc60">value_type</a> &amp;&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
@@ -380,7 +681,7 @@ template&lt;size_type SIZE, typename T  = unsigned char&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>The output operator as a replacement for the <a class="el" href="class_rw_c_buf.html#acca07b851365411b3857fc2a8c8770b3" title="Extracting the first item from the buffer.">read()</a> method. </p>
+<p>The output operator as a replacement for the <a class="el" href="class_rw_c_buf.html#a27bc8f2965c3fc9fc752b79be050cd5d" title="Extracting the first item from the buffer.">read()</a> method. </p>
 <dl class="section note"><dt>Note</dt><dd>The result of the read is not checked here. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -392,21 +693,21 @@ template&lt;size_type SIZE, typename T  = unsigned char&gt; </div>
 
 </div>
 </div>
-<a id="a626c6dc56f1a7a4d087fdfb97f50d613"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a626c6dc56f1a7a4d087fdfb97f50d613">&#9670;&nbsp;</a></span>operator[]()</h2>
+<a id="a1d838da382d201577de96f0e78bf2e6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d838da382d201577de96f0e78bf2e6e">&#9670;&nbsp;</a></span>operator[]()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;size_type SIZE, typename T  = unsigned char&gt; </div>
+template&lt;size_t SIZE, typename T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T&amp; <a class="el" href="class_rw_c_buf.html">RwCBuf</a>&lt; SIZE, T &gt;::operator[] </td>
+          <td class="memname"><a class="el" href="class_rw_c_buf.html#a605f83f25d52084a4a8b64fc56c8bc60">value_type</a>&amp; <a class="el" href="class_rw_c_buf.html">RwCBuf</a>&lt; SIZE, T &gt;::operator[] </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="_rw_c_buf_8hpp.html#a8560ac5527cd0ed38d71e0e58acc8021">size_type</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="class_rw_c_buf.html#a1b6498b3e1037c7d7cf3228f1c5afb40">size_type</a>&#160;</td>
           <td class="paramname"><em>i</em></td><td>)</td>
           <td></td>
         </tr>
@@ -426,17 +727,17 @@ template&lt;size_type SIZE, typename T  = unsigned char&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>T&amp; - reference to array item with index i </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>value_type&amp; - reference to array item with index i </dd></dl>
 
 </div>
 </div>
-<a id="acca07b851365411b3857fc2a8c8770b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acca07b851365411b3857fc2a8c8770b3">&#9670;&nbsp;</a></span>read()</h2>
+<a id="a27bc8f2965c3fc9fc752b79be050cd5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27bc8f2965c3fc9fc752b79be050cd5d">&#9670;&nbsp;</a></span>read()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;size_type SIZE, typename T  = unsigned char&gt; </div>
+template&lt;size_t SIZE, typename T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -444,7 +745,7 @@ template&lt;size_type SIZE, typename T  = unsigned char&gt; </div>
         <tr>
           <td class="memname">bool <a class="el" href="class_rw_c_buf.html">RwCBuf</a>&lt; SIZE, T &gt;::read </td>
           <td>(</td>
-          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="class_rw_c_buf.html#a605f83f25d52084a4a8b64fc56c8bc60">value_type</a> &amp;&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
@@ -475,7 +776,7 @@ Unsuccessful extracting only when the buffer is empty. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;size_type SIZE, typename T  = unsigned char&gt; </div>
+template&lt;size_t SIZE, typename T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -511,7 +812,7 @@ template&lt;size_type SIZE, typename T  = unsigned char&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;size_type SIZE, typename T  = unsigned char&gt; </div>
+template&lt;size_t SIZE, typename T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -535,13 +836,13 @@ template&lt;size_type SIZE, typename T  = unsigned char&gt; </div>
 
 </div>
 </div>
-<a id="a22a2f08ffabf2618666029b18bec628b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a22a2f08ffabf2618666029b18bec628b">&#9670;&nbsp;</a></span>write()</h2>
+<a id="a5af5870a077dcaff489f7f8cca1bcfbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5af5870a077dcaff489f7f8cca1bcfbb">&#9670;&nbsp;</a></span>write()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;size_type SIZE, typename T  = unsigned char&gt; </div>
+template&lt;size_t SIZE, typename T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -549,7 +850,7 @@ template&lt;size_type SIZE, typename T  = unsigned char&gt; </div>
         <tr>
           <td class="memname">bool <a class="el" href="class_rw_c_buf.html">RwCBuf</a>&lt; SIZE, T &gt;::write </td>
           <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="class_rw_c_buf.html#a605f83f25d52084a4a8b64fc56c8bc60">value_type</a> &amp;&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
@@ -572,6 +873,213 @@ in Non-Rewrite mode. In Rewrite mode write always succesfull </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool - result of writing </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="af5592fef1f0937e818eb1ae7bcd895bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5592fef1f0937e818eb1ae7bcd895bf">&#9670;&nbsp;</a></span>_begin</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t SIZE, typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_rw_c_buf_1_1_rw_c_buf_index.html">RwCBufIndex</a>&lt;SIZE&gt; <a class="el" href="class_rw_c_buf.html">RwCBuf</a>&lt; SIZE, T &gt;::_begin</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Data start index. </p>
+
+</div>
+</div>
+<a id="af64547efd6e9b89cf41d62d67bb16433"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af64547efd6e9b89cf41d62d67bb16433">&#9670;&nbsp;</a></span>_data</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t SIZE, typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_rw_c_buf.html#a605f83f25d52084a4a8b64fc56c8bc60">value_type</a> <a class="el" href="class_rw_c_buf.html">RwCBuf</a>&lt; SIZE, T &gt;::_data[SIZE] {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Buffer Array. </p>
+
+</div>
+</div>
+<a id="ad4c0c12977f4f9677d171952c7c42c8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4c0c12977f4f9677d171952c7c42c8e">&#9670;&nbsp;</a></span>_end</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t SIZE, typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_rw_c_buf_1_1_rw_c_buf_index.html">RwCBufIndex</a>&lt;SIZE&gt; <a class="el" href="class_rw_c_buf.html">RwCBuf</a>&lt; SIZE, T &gt;::_end</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Data end index. </p>
+
+</div>
+</div>
+<a id="ad57427e615505924e444a35d12bbf0fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad57427e615505924e444a35d12bbf0fb">&#9670;&nbsp;</a></span>_isEmpty</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t SIZE, typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_rw_c_buf.html">RwCBuf</a>&lt; SIZE, T &gt;::_isEmpty {true}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Empty buffer flag. </p>
+
+</div>
+</div>
+<a id="adf26beb5a5e5c8a024803e489be22b19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf26beb5a5e5c8a024803e489be22b19">&#9670;&nbsp;</a></span>_isFull</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t SIZE, typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_rw_c_buf.html">RwCBuf</a>&lt; SIZE, T &gt;::_isFull {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Full buffer flag. </p>
+
+</div>
+</div>
+<a id="a084f9ae22c59edd22f32a08208b39bd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a084f9ae22c59edd22f32a08208b39bd6">&#9670;&nbsp;</a></span>_isOverwritten</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t SIZE, typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_rw_c_buf.html">RwCBuf</a>&lt; SIZE, T &gt;::_isOverwritten {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>An indication that an overwrite has occurred. </p>
+
+</div>
+</div>
+<a id="a714c1d0c357e7dfe47b1e3d866dc5ac2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a714c1d0c357e7dfe47b1e3d866dc5ac2">&#9670;&nbsp;</a></span>_reWriteMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t SIZE, typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_rw_c_buf.html#a299e48c3a3464c00ccf49b8b2a7ff82c">rwType</a> <a class="el" href="class_rw_c_buf.html">RwCBuf</a>&lt; SIZE, T &gt;::_reWriteMode</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Operation mode. </p>
+
+</div>
+</div>
+<a id="a2224f7e09f46d9e19d51e2d09e86bc8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2224f7e09f46d9e19d51e2d09e86bc8e">&#9670;&nbsp;</a></span>size</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t SIZE, typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="class_rw_c_buf.html#a1b6498b3e1037c7d7cf3228f1c5afb40">size_type</a> <a class="el" href="class_rw_c_buf.html">RwCBuf</a>&lt; SIZE, T &gt;::size = SIZE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

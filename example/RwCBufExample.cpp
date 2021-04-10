@@ -3,14 +3,10 @@
 
 #include "RwCBuf.hpp"
 
-// Set size of buffer
-constexpr const size_type RwCBuf_SIZE{10};
 
-// Set type of items
-using RwCBufItemType = int;
-
-// Alias of buffer type
-using RwCBufType = RwCBuf<RwCBuf_SIZE, RwCBufItemType>;
+// ===== Alias of testing buffer ========
+using RwCBufType = RwCBuf<10, int>;  // =
+// ======================================
 
 using namespace std;
 
@@ -31,25 +27,26 @@ int main() {
   RwCBufType* pbuf{&buf};
 #endif
 
-  RwCBufItemType c;
-  int in;
+  RwCBufType::value_type c;
+  RwCBufType::size_type in;
 
-  cout << "Buffer length: " << RwCBuf_SIZE << endl;
+  cout << "Buffer length: " << pbuf->size << endl;
   cout << "Type of buffer items: " << typeid(c).name() << endl;
 
   //================== Test cycle =======================
   do {
-    cout << "Set ReWrite mode (1 - on, 0 - off, -1 - exit): ";
+    cout << "Set ReWrite mode (1 - on, 0 - off, >1 - exit): ";
 
     // Reset and set mode
     if ((cin >> in).good()) {
-      if (in > 0) pbuf->reset(RwCBufType::rwType::rwBuf);
+      if (in == 1) pbuf->reset(RwCBufType::rwType::rwBuf);
       if (in == 0) pbuf->reset(RwCBufType::rwType::nonRwBuf);
-      if (in < 0) break;
+      if (in > 1) break;
     } else
       pbuf->reset(RwCBufType::rwType::rwBuf);
 
     cout << "Buffer reset in ";
+
     if (bool(pbuf->reWriteMode()))
       cout << "ReWrite mode" << endl;
     else
@@ -65,8 +62,11 @@ int main() {
         *pbuf << c;
       else
         break;
+
       if ((cin.peek() != '\n') && (cin.peek() != ' ')) cin.get();
+
       while (cin.peek() == ' ') cin.get();
+
     } while (cin.peek() != '\n');
 
     clearCin();
@@ -81,7 +81,7 @@ int main() {
 
     // Read (not extract) items by direct access to buffer array
     if (pbuf->count() > 0) {
-      for (size_type i = 0; i < pbuf->count(); ++i)
+      for (RwCBufType::size_type i = 0; i < pbuf->count(); ++i)
         cout << (*pbuf)[pbuf->begin() + i] << " ";
       cout << endl;
     }
@@ -103,6 +103,7 @@ int main() {
     if (pbuf->isEmpty()) cout << endl << "Buffer is empty" << endl;
 
     cout << endl << "===================================" << endl;
+
   } while (true);
   //================== End of Test cycle =======================
 
