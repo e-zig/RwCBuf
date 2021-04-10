@@ -11,3 +11,7 @@ Circular FIFO buffer template with rewrite mode. Implemented for embedded system
 ### Documentation
 
 Doxygen documentation [here](https://e-zig.github.io/docs/rwcbuf/html/index.html "here").
+
+
+### Build results:
+Travis: [![Build Status](https://travis-ci.com/e-zig/RwCBuf.svg?branch=master)](https://travis-ci.com/e-zig/RwCBuf)
