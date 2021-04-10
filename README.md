@@ -7,3 +7,7 @@ Circular FIFO buffer template with rewrite mode. Implemented for embedded system
 - STL free
 - no exceptions
 - rewrite or non-rewrite modes
+
+### Documentation
+
+Doxygen documentation [here](https://htmlpreview.github.io/?https://github.com/e-zig/RwCBuf/blob/master/doc/html/index.html "here").
