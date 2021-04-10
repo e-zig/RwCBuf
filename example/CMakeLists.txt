@@ -3,7 +3,7 @@ project(RwCBufExample VERSION 1.0.0)
 
 set(CMAKE_CXX_STANDARD 11)
 
-include_directories("../")
+include_directories("../src/")
 
 add_executable(RwCBufExample RwCBufExample.cpp)
 
