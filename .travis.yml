@@ -4,6 +4,10 @@ language: cpp
 compiler:
   - gcc
   - clang
+  
+arch:
+  - amd64
+  - arm64
 
 os: 
   - windows
