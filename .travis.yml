@@ -1,9 +1,16 @@
   
 language: cpp
-compiler: gcc
+
+compiler:
+  - gcc
+  - clang
 
 os: 
   - windows
+  - linux
+  
+dist:
+  - focal
 
 script:
   - cmake example/CMakeLists.txt
