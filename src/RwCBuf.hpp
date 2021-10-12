@@ -56,7 +56,7 @@ class RwCBuf {
      * @brief Pre-increment operator, return a copy of the index value
      */
     size_type operator++() noexcept {
-      i = size_type(++i % INDEX_SIZE);
+      i = size_type((i + 1) % INDEX_SIZE);
       return i;
     };
 
@@ -65,7 +65,7 @@ class RwCBuf {
      */
     size_type operator++(int) noexcept {
       size_type ret{i};
-      i = size_type(++i % INDEX_SIZE);
+      i = size_type((i + 1) % INDEX_SIZE);
       return ret;
     };
 
@@ -242,10 +242,12 @@ class RwCBuf {
   }
 
   /**
-   * @brief Direct access to the buffer array
+   * @brief Direct access to the buffer items
    * @note Safe: out of bounds is not possible.
    * @param[in] i - index from 0 to SIZE-1
-   * @return value_type& - reference to array item with index i
+   * @return value_type& - reference to buffer item with index i
    */
-  value_type& operator[](const size_type i) noexcept { return _data[i % SIZE]; }
+  value_type& operator[](const size_type i) noexcept {
+    return _data[(_begin() + i) % SIZE];
+  }
 };

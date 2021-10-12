@@ -82,7 +82,7 @@ int main() {
     // Read (not extract) items by direct access to buffer array
     if (pbuf->count() > 0) {
       for (RwCBufType::size_type i = 0; i < pbuf->count(); ++i)
-        cout << (*pbuf)[pbuf->begin() + i] << " ";
+        cout << (*pbuf)[i] << " ";
       cout << endl;
     }
 
